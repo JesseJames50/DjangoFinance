@@ -37,4 +37,4 @@ para troca de experiências profissionais.
 O projeto foi desenvolvido durante o treinamento da PYSTACK WEEK 7.0 (https://pythonando.com.br/)
 
 ## Licença
-Este projeto está licenciado sob a [Licença MIT](link para a licença). Consulte o arquivo LICENSE para obter mais informações.
+Este projeto está licenciado sob a [Licença MIT]
