@@ -1,0 +1,93 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+{% block 'head' %}
+
+    <link href="{% static 'perfil/css/home.css' %}" rel="stylesheet">
+    <link href="{% static 'perfil/css/gerenciar.css' %}" rel="stylesheet">
+    <link href="{% static 'extrato/css/view_extrato.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block 'body' %}
+    <br>
+    <br>
+    <div class='container'>
+        <form action="{% url 'view_extrato' %}" method="GET">
+        <div class="row">
+            
+            <div class="col-md">
+                <label>Conta</label>
+                <select name="conta" class="form-select">
+                    {% for conta in contas %}
+                        <option value="{{conta.id}}">{{conta}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col-md">
+                <label>Categoria</label>
+                <select name="categoria" class="form-select">
+                    {% for categoria in categorias %}
+                        <option value="{{categoria.id}}">{{categoria}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="col-md">
+                <label>Período</label>
+                <select name="periodo" class="form-select">
+                    <option>Últimos 7 dias</option>
+                </select>
+            </div>
+        
+            
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-2">
+                <input style="width: 100%" type="submit" class="botao-principal" value="Filtrar">
+                
+            </div>
+            </form>
+            <div class="col-md-2">
+                <a href="{% url 'exportar_pdf' %}" class="botao-secundario">Exportar extrato</a>
+            </div>
+        </div>
+        <br>
+        <br>
+
+
+        <div class="card">
+            
+                <table>
+                    <tr>
+                        <th>Conta</th>
+                        <th>Categoria</th>
+                        <th>Data</th>
+                        <th>Tipo</th>
+                        <th>valor</th>
+                        
+                    </tr>
+                    {% for valor in valores %}
+                        <tr class="linha">
+                            <td width="10%">{{valor.conta}}</td>
+                            <td>{{valor.categoria}}</td>
+                            <td>{{valor.data}}</td>
+                            <td>
+                            {% if valor.tipo == 'S'%}
+                                <img src="{% static 'perfil/img/saidas.png' %}">
+                            {% else %}
+                                <img src="{% static 'perfil/img/entradas.png' %}">
+                            {% endif %}
+                            
+                            </td>
+                            <td>R$ {{valor.valor}}</td>
+                            
+                        </tr>
+                    {% endfor %}
+
+                </table>
+            
+        </div>
+    </div>
+{% endblock %}

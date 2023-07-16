@@ -1,0 +1,36 @@
+table{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.linha{
+    height: 40px;
+    background-color: var(--dark-color);
+    padding: 20px;
+}
+
+
+td, th{
+    padding: 20px;
+}
+
+tr{
+    background-color: var(--main-color);
+
+}
+
+.botao-secundario{
+
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    border: 2px solid var(--contrast-color);
+    padding: 10px;
+    border-radius: 15px;
+    width: 100%;
+    display: block;
+    text-align: center;
+
+}

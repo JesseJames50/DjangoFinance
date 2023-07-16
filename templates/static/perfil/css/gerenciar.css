@@ -1,0 +1,76 @@
+.card{
+
+    width: 100%;
+    background-color: var(--main-color);
+    padding: 20px;
+
+}
+
+.saldo{
+    border-left: 2px solid var(--contrast-color);
+    padding-left: 10px;
+}
+
+.fonte-destaque{
+
+    font-weight: bold;
+    font-size: 25px;
+
+}
+
+.font-light{
+
+    font-weight: 200;
+
+}
+
+.hr-borda{
+    color: var(--dark-color);
+}
+
+.lista-conta{
+    background-color: var(--dark-color);
+    padding: 8px;
+    border-radius: 10px;
+
+}
+.total-conta{
+    color: #B9F1D6;
+    font-weight: 200;
+    float: right;
+}
+
+.botao-principal{
+
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+
+    padding: 10px;
+    background-color: var(--contrast-color);
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+
+}
+
+.despesa{
+    border-right: 2px solid var(--differential-color);
+    text-align: right;
+    padding-right: 10px;
+}
+
+.negativo{
+    color: var(--differential-color);
+}
+
+.positivo{
+    color: var(--contrast-color);
+}
+
+
+.icone-setas{
+    width: 50%;
+    display: inline;
+}

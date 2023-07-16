@@ -1,0 +1,11 @@
+{
+    "sqltools.useNodeRuntime": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "slite_conn",
+            "database": "${workspaceFolder:ProjetoPSW}/db.sqlite3"
+        }
+    ]
+}

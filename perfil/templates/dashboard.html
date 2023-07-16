@@ -1,0 +1,52 @@
+v{% extends 'bases/base.html' %}
+{% load static %}
+{% block 'head' %}
+
+    <link href="{% static 'perfil/css/home.css' %}" rel="stylesheet">
+    <link href="{% static 'perfil/css/gerenciar.css' %}" rel="stylesheet">
+    <link href="{% static 'contas/css/contas.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block 'body' %}
+
+    <div class="container">
+        <br>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        <br>
+        <div class="row">
+
+            <div class="col-md">                
+                <br>                
+                <span class="fonte-destaque">Gastos por categoria</span>
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+    
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+            labels: {{labels|safe}},
+            datasets: [{
+                label: 'Gastos por categoria',
+                data: {{values}},
+            }]
+            },    
+        });
+    </script>
+
+{% endblock %}

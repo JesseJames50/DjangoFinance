@@ -1,0 +1,122 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+{% block 'head' %}
+
+    <link href="{% static 'perfil/css/home.css' %}" rel="stylesheet">
+    <link href="{% static 'perfil/css/gerenciar.css' %}" rel="stylesheet">
+    <style>
+        .linha-conta{
+
+            background-color: var(--dark-color);
+            padding: 20px;
+            border-radius: 10px;
+
+        }
+    </style>
+{% endblock %}
+
+{% block 'body' %}
+
+    <div class="container">
+        <br>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        <br>
+        <div class="row">
+
+            <div class="col-md-8">
+                <p class="fonte-destaque" style="color: red;">Contas vencidas</p>
+                <div class="card">
+                    {% if not contas_vencidas %}
+                    <p class="fonte-destaque">Ufa, nenhuma conta vencida.</p>
+                
+                    {% else %}
+                        {% for conta in contas_vencidas %}
+                            <div class="linha-conta">
+                                <div class="row">
+                                    <div class="col-md text-center">
+                                        {{conta}}
+                                    </div>
+                                    <div class="col-md text-center">
+                                        Dia: {{conta.dia_pagamento}}
+                                    </div>
+                                    <div class="col-md text-center">
+                                        <a href="#" class="botao-principal">PAGAR</a>
+                                    </div> 
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <br>
+                <br>
+                <p class="fonte-destaque" style="color: #E96363;">Contas próximas do vencimento</p>
+                <div class="card">
+                    {% if not restantes %}
+                    <div class="row">
+                        <div class="col-md text-left">
+                            Nenhuma conta próxima do vencimento                        
+                        </div>
+                    </div>
+
+                    {% else %}
+                        {% for conta in contas_proximas_vencimento %}
+                            <div class="linha-conta">
+                                <div class="row">
+                                    <div class="col-md text-center">
+                                        {{conta}}
+                                    </div>
+                                    <div class="col-md text-center">
+                                        Dia: {{conta.dia_pagamento}}
+                                    </div>
+                                    <div class="col-md text-center">
+                                        <a href="#" class="botao-principal">PAGAR</a>
+                                    </div> 
+                                </div>
+                            </div>
+                        {% endfor %}                    
+                    {% endif %}
+                </div>
+                <br>
+                <br>
+                <p class="fonte-destaque">Restantes</p>
+                <div class="card">
+                    {% if not restantes %}
+                    <div class="row">
+                        <div class="col-md text-left">
+                            Nenhuma conta restante
+                        </div> 
+                    </div>                    
+                    {% else %}
+                        {% for conta in restantes %}
+                            <div class="linha-conta">
+                                <div class="row">
+                                    <div class="col-md text-center">
+                                        {{conta}}
+                                    </div>
+                                    <div class="col-md text-center">
+                                        Dia: {{conta.dia_pagamento}}
+                                    </div>
+                                    <div class="col-md text-center">
+                                        <a href="#" class="botao-principal">PAGAR</a>
+                                    </div> 
+                                </div>
+                            </div>
+                        {% endfor %} 
+                       
+                    {% endif %}
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

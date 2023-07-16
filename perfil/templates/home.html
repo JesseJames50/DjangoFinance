@@ -1,0 +1,167 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+
+{% block 'head' %}
+
+    <link href = "{% static 'perfil/css/home.css' %}" rel='stylesheet'>     
+
+{% endblock %}
+
+{% block 'body' %}
+    <div class="container">
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+                <a style="text-decoration: none; color:white;" href="{% url 'novo_valor' %}">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <span  class="fonte-destaque">RS {{total_entradas}}</span>
+                            </div>
+                            <div class="col-md">
+                                <img class="icone-setas" src="{% static 'perfil/img/entradas.png' %}">
+                            </div>
+                        </div>
+        
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a style="text-decoration: none; color:white;" href="{% url 'novo_valor' %}">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <span  class="fonte-destaque">RS {{total_saidas}}</span>
+                            </div>
+                            <div class="col-md">
+                                <img class="icone-setas" src="{% static 'perfil/img/exit.png' %}">
+                            </div>
+                        </div> 
+                    </div>
+                </a>
+            </div>
+        </div>
+        <br>
+        <br>
+       
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="saldo">
+                        <span class="fonte-destaque">Saldo total</span>
+                        <br>
+                        <span class="font-light">R$ {{total_contas}}</span>
+                    </div>
+                    <hr class="hr-borda">
+                    <span class="fonte-destaque">Suas contas</span>
+
+                    <div class="div-contas">
+                        {% for conta in contas %}
+                            <div class="lista-conta">
+                                <span>{{conta.apelido}}</span>
+                                <span class="total-conta">R$ {{conta.valor}}</span>
+                            </div>
+                            <br>
+                        {% endfor %}
+                        
+                        
+                    </div>
+                    <hr class="hr-borda">
+                    <a href="{% url 'gerenciar' %}" class="botao-principal">Gerenciar contas</a>
+                </div>
+                
+            </div>
+
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="saldo">
+                                <span class="fonte-destaque">Ganho mensal</span>
+                                <br>
+                                <span class="font-light">R$ {{total_entradas}}</span>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="despesa">
+                                <span class="fonte-destaque">Despesa mensal</span>
+                                <br>
+                                <span class="font-light">R$ {{total_saidas}}</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <hr class="hr-borda">
+                    <span class="fonte-destaque">Total livre</span>
+                    <span class="font-light {% if total_livre < 0 %}negativo{% endif %}">R$ {{total_livre}}</span>
+                    <hr class="hr-borda">
+                    <a href="#" class="botao-principal">Gerenciar dados mensais</a>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="saldo">
+                        <span class="fonte-destaque">Planejamento</span>
+                    </div>
+                    <hr class="hr-borda">
+                    <a href="{% url "definir_planejamento" %}" class="botao-principal">Definir planejamento</a>
+                    <br>
+                    <a href="{% url "ver_planejamento" %}" class="botao-principal">Ver planejamento</a>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <span class="fonte-destaque">Equilibrio financeiro</span>
+                    <hr class="hr-borda">
+
+                    <p>Gastos essenciais</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: {{percentual_gastos_essenciais}}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <br>
+                    <p>Gastos não essenciais</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: {{percentual_gastos_nao_essenciais}}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+
+                    <hr class="hr-borda">
+                    <a href="{% url 'gerenciar' %}" class="botao-principal">Alterar categorias essenciais</a>
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            
+            <div class="col-md-8">
+                <div class="card">
+                    <span class="fonte-destaque">Gerenciar contas</span>
+                    <hr class="hr-borda">
+
+                    <span class="fonte-destaque">Próximas do vencimento</span>
+                    <span class="fonte-light">3 contas próximas do vencimento</span>
+                    <br>
+                    <span class="fonte-destaque negativo">Vencidas</span>
+                    <span class="fonte-light">0 contas vencidas</span>
+
+                    <hr class="hr-borda">
+                    
+                    <a href="{% url 'ver_contas' %}" class="botao-principal">Ver mais</a>
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+    
+{% endblock %}
