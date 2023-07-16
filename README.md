@@ -30,6 +30,7 @@ Para mais detalhes sobre a instalação e configuração do projeto, consulte a 
 
 ## Contribuição
 Contribuições para este projeto são bem-vindas. Sinta-se à vontade para abrir issues relatando bugs, sugerir melhorias ou enviar pull requests.
+Como opção de aumentar a rede de contatos, em julgando oportuno, poderei adicionar o seu perfil à minha rede de networking no Linkeding [https://www.linkedin.com/in/jessejamesrodriguesfreire/]
 
 ## Autores
 O projeto foi desenvolvido durante o treinamento da PYSTACK WEEK 7.0 (https://pythonando.com.br/)
