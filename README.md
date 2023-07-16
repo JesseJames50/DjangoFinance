@@ -2,15 +2,15 @@
 Este projeto é uma aplicação web desenvolvida em Python e Django, utilizando as versões 3.8.2 e 4.2.3, respectivamente. O objetivo do sistema é oferecer um controle eficiente das finanças pessoais, proporcionando diversas funcionalidades para auxiliar na gestão das contas pessoais.
 
 Funcionalidades Principais
-Controle de Contas: O sistema permite cadastrar e gerenciar diferentes contas financeiras, como contas bancárias, cartões de crédito, carteiras virtuais, entre outras. Os usuários podem registrar informações sobre saldo atual, transações realizadas e categorias de gastos.
+1. Controle de Contas: O sistema permite cadastrar e gerenciar diferentes contas financeiras, como contas bancárias, cartões de crédito, carteiras virtuais, entre outras. Os usuários podem registrar informações sobre saldo atual, transações realizadas e categorias de gastos.
 
-Extrato das Contas: É possível visualizar o extrato detalhado de cada conta, exibindo as transações realizadas, datas, valores e categorias relacionadas. Isso permite uma análise mais precisa dos gastos e receitas.
+2. Extrato das Contas: É possível visualizar o extrato detalhado de cada conta, exibindo as transações realizadas, datas, valores e categorias relacionadas. Isso permite uma análise mais precisa dos gastos e receitas.
 
-Exportar para PDF: Os usuários têm a opção de exportar o extrato das contas para arquivos PDF, facilitando o armazenamento e compartilhamento das informações financeiras.
+3. Exportar para PDF: Os usuários têm a opção de exportar o extrato das contas para arquivos PDF, facilitando o armazenamento e compartilhamento das informações financeiras.
 
-Dashboard dos Gastos Mensais: O sistema oferece um painel de controle com gráficos e estatísticas dos gastos mensais. Isso permite uma visualização intuitiva e rápida do panorama financeiro, auxiliando na identificação de padrões de consumo e possíveis economias.
+4. Dashboard dos Gastos Mensais: O sistema oferece um painel de controle com gráficos e estatísticas dos gastos mensais. Isso permite uma visualização intuitiva e rápida do panorama financeiro, auxiliando na identificação de padrões de consumo e possíveis economias.
 
-Planejamento de Gastos por Natureza de Despesa: O sistema possibilita o planejamento dos gastos futuros com base na natureza das despesas. Os usuários podem categorizar seus gastos e definir metas financeiras para cada categoria, auxiliando na organização e no controle dos gastos.
+5. Planejamento de Gastos por Natureza de Despesa: O sistema possibilita o planejamento dos gastos futuros com base na natureza das despesas. Os usuários podem categorizar seus gastos e definir metas financeiras para cada categoria, auxiliando na organização e no controle dos gastos.
 
 ## Tecnologias Utilizadas
 - Python 3.8.2
