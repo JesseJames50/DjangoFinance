@@ -12,14 +12,14 @@ Dashboard dos Gastos Mensais: O sistema oferece um painel de controle com gráfi
 
 Planejamento de Gastos por Natureza de Despesa: O sistema possibilita o planejamento dos gastos futuros com base na natureza das despesas. Os usuários podem categorizar seus gastos e definir metas financeiras para cada categoria, auxiliando na organização e no controle dos gastos.
 
-# Tecnologias Utilizadas
-Python 3.8.2
-Django 4.2.3
-HTML5, CSS3 e JavaScript (Front-end)
-Banco de dados Sqlite3
-Git (Controle de versão)
+## Tecnologias Utilizadas
+- Python 3.8.2
+- Django 4.2.3
+- HTML5, CSS3 e JavaScript (Front-end)
+- Banco de dados Sqlite3
+- Git (Controle de versão)
 
-# Instalação e Execução
+## Instalação e Execução
 Clone este repositório em sua máquina local.
 Certifique-se de ter o Python 3.8.2 instalado. Recomendamos o uso de um ambiente virtual.
 Instale as dependências do projeto utilizando o arquivo requirements.txt.
@@ -28,11 +28,11 @@ Execute as migrações do Django para criar as tabelas no banco de dados.
 Inicie o servidor local e acesse o projeto em seu navegador.
 Para mais detalhes sobre a instalação e configuração do projeto, consulte a seção de documentação disponível neste repositório.
 
-# Contribuição
+## Contribuição
 Contribuições para este projeto são bem-vindas. Sinta-se à vontade para abrir issues relatando bugs, sugerir melhorias ou enviar pull requests.
 
-# Autores
+## Autores
 O projeto foi desenvolvido durante o treinamento da PYSTACK WEEK 7.0 (https://pythonando.com.br/)
 
-# Licença
+## Licença
 Este projeto está licenciado sob a [Licença MIT](link para a licença). Consulte o arquivo LICENSE para obter mais informações.
